@@ -58,6 +58,7 @@ body {
   font-weight: 200;
   margin-top: 10px;
   margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
 #wrapper h3 {
@@ -70,12 +71,18 @@ body {
 .dashboards {
   max-width: 1170px;
   margin: 0 auto;
+  margin-top: 20px;
 }
 
 .dashboard {
+  padding-left: 10px;
   height: 450px;
   margin-top: 1em;
   margin-bottom: 1em;
+}
+
+.vseparator {
+  border-right: 1px solid #ccc;
 }
 
 .dashboard h3 {
@@ -85,6 +92,12 @@ body {
 
 .dashboard p {
   font-size: .8rem;
+}
+
+.population {
+}
+
+.elections {
 }
 
 footer {

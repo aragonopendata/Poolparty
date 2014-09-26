@@ -9,7 +9,7 @@
     bottom: 10,
     left: 10
   };
-  var width = 550 - margin.left - margin.right;
+  var width = 1100 - margin.left - margin.right;
   var height = 400 - margin.top - margin.bottom;
 
   var formatNumber = d3.format(',.0f'), // zero decimal places

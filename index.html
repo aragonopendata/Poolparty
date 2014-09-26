@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Visual Aragopedia</title>
+  <title>Jaca · La Jacetanea · Visual Aragopedia</title>
   <meta name="description" content="Visual Aragopedia...">
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -21,9 +21,9 @@
 <body>
   <div class="pure-menu pure-menu-horizontal">Visual Aragopedia</div>
 
-  <div id="map-canvas" class="banner" hidden></div>
+  <div id="map-canvas" class="banner"></div>
 
-  <div id="header" hidden>
+  <div id="header">
     <h1>Jaca</h1>
     <h2>La Jacetanea</h2>
   </div>
@@ -32,34 +32,36 @@
     <div class="pure-g dashboards">
 
       <div class="pure-u-1">
-        <h2>Población</h2>
-        <div class="pure-g">
-          <div class="pure-u-1-2">
-            <div class="dashboard">
-              <h3>Padrón <a class="icon-info"> <i class="fa fa-info-circle"></i></a></h3>
-              <div class="census"></div>
-              <div class="info">
-                <p>Explotación y difusión de las cifras oficiales de población de todos los municipios aragoneses, comarcas y provincias a 1 de enero de cada año a partir de las cifras aprobadas por el Gobierno y publicadas en BOE. Referencia al 1 de enero de cada año.</p>
-                <p>
-                  <a href="/assets/assets/padron_jaca.csv" target="_blank">Ver datos en CSV</a> ·
-                  <a href="http://opendata.aragon.es/catalogo/catalogo.html?q=padron" target="_blank">Ver datos en Aragón Open Data</a>
-                </p>
+        <div class="population">
+          <h2><i class="fa fa-users"></i> Población</h2>
+          <div class="pure-g">
+            <div class="pure-u-1-2">
+              <div class="dashboard vseparator">
+                <h3>Padrón <a class="icon-info"> <i class="fa fa-info-circle"></i></a></h3>
+                <div class="census"></div>
+                <div class="info">
+                  <p>Explotación y difusión de las cifras oficiales de población de todos los municipios aragoneses, comarcas y provincias a 1 de enero de cada año a partir de las cifras aprobadas por el Gobierno y publicadas en BOE. Referencia al 1 de enero de cada año.</p>
+                  <p>
+                    <a href="/assets/assets/padron_jaca.csv" target="_blank">Ver datos en CSV</a> ·
+                    <a href="http://opendata.aragon.es/catalogo/catalogo.html?q=padron" target="_blank">Ver datos en Aragón Open Data</a>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="pure-u-1-2">
-            <div class="dashboard">
-              <h3>Tasa de paro</h3>
+            <div class="pure-u-1-2">
+              <div class="dashboard">
+                <h3>Tasa de paro <a class="icon-info"><i class="fa fa-info-circle"></i></a></h3>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="pure-u-1">
-        <h2>Elecciones</h2>
+      <div class="pure-u-1 elections">
+        <h2><i class="fa fa-university"></i> Elecciones</h2>
         <div class="pure-g">
-          <div class="pure-u-1-2">
+          <div class="pure-u-1">
             <div class="dashboard">
               <h3>Votos en las elecciones <a class="icon-info"><i class="fa fa-info-circle"></i></a></h3>
               <div class="votes"></div>
@@ -72,20 +74,14 @@
               </div>
             </div>
           </div>
-
-          <div class="pure-u-1-2">
-            <div class="dashboard">
-              <h3>Participación</h3>
-            </div>
-          </div>
         </div>
       </div>
 
       <div class="pure-u-1">
-        <h2>Economía</h2>
+        <h2><i class="fa fa-euro"></i> Economía</h2>
         <div class="pure-g">
           <div class="pure-u-1-2">
-            <div class="dashboard">
+            <div class="dashboard vseparator">
               <h3>Actividades económicas <a class="icon-info"><i class="fa fa-info-circle"></i></a></h3>
               <div class="activities"></div>
               <div class="info">

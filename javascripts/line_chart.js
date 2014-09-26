@@ -143,6 +143,7 @@
         return y(d.pop);
       })
       .attr('r', 6)
+      .style('opacity', 0.7)
       .style('fill', function() {
         return color(this.parentNode.__data__.name);
       })
