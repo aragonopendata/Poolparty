@@ -86,7 +86,7 @@
 
   // The function to draw the positive bars
 
-  function drawBars(data) {
+  function drawBars() {
 
     xScale.domain(d3.range(actividades_jaca.length));
     yScale.domain([d3.max(actividades_jaca, function(d) {
