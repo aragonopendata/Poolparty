@@ -10,14 +10,16 @@
     left: 10
   };
   var width = 550 - margin.left - margin.right;
-  var height = 300 - margin.top - margin.bottom;
+  var height = 400 - margin.top - margin.bottom;
 
   var formatNumber = d3.format(',.0f'), // zero decimal places
     format = function(d) {
       return formatNumber(d) + ' ' + units;
     };
+
   var color = d3.scale.ordinal()
-    .range(['#8DD3C7', '#FFFFB3', '#BEBADA', '#FB8072', '#80B1D3', '#FDB462', '#ed3131', '#595be5', '#D9D9D9', '#BC80BD', '#CCEBC5', '#FFED6F']);
+      .range(['#8DD3C7', '#FB8072', '#80B1D3', '#FDB462', '#FFFFB3', '#BEBADA', '#B3DE69', '#FCCDE5', '#D9D9D9', '#BC80BD', '#CCEBC5', '#FFED6F']);
+
 
   // append the svg canvas to the page
   var svg2 = d3.select('.votes').append('svg')
@@ -143,7 +145,7 @@
         return d.color || color(d.name.replace(/ .*/, ''));
       })
       .style('stroke', function(d) {
-        return d3.rgb(d.color).darker(2);
+        return d3.rgb(d.color).darker(1);
       })
       .append('title')
       .text(function(d) {

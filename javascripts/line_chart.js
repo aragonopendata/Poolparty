@@ -20,7 +20,7 @@
     .range([height, 0]);
 
   var color = d3.scale.ordinal()
-    .range(['#e41a1c','#377eb8','#d95f02']);
+      .range(['#8DD3C7', '#FB8072', '#80B1D3']);
 
   var xAxis = d3.svg.axis()
     .scale(x)
