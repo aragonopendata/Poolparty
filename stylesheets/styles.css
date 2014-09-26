@@ -1,16 +1,14 @@
 body {
-  font-family: "proxima-nova-1","proxima-nova-2", Helvetica, Verdana, sans-serif;
+  font-family: helvetica, sans-serif;
   color: #505050;
 }
 
-header {
-  background: black;
-  color: white;
-  height: 1.6rem;
+.pure-menu {
+  height: 36px;
   text-align: left;
-  font-size: 1rem;
-  padding-top: .6rem;
-  padding-left: 1rem;
+  font-size: 1em;
+  padding-top: .6em;
+  padding-left: 1em;
 }
 
 #header {
@@ -29,7 +27,12 @@ header {
   -webkit-margin-before: 0.6rem;
   -webkit-margin-after: 0.5rem;
   display:inline;
-  color: black;
+  vertical-align: middle;
+  margin-bottom: 0;
+  font-size: 2em;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 0 1px 1px black;
 }
 
 #header h2 {
@@ -40,18 +43,25 @@ header {
 
 #wrapper {
   margin: 0 auto;
-  /* width: 978px; */
-  /* margin-left: auto; */
-  /* margin-right: auto; */
-  /* overflow: hidden; */
-  /* height: 1%; */
-  /* position: relative; */
+  padding-top: 0;
 }
 
 #map-canvas {
   height: 400px;
   width: 100%;
   z-index: -999999999999;
+}
+
+#wrapper h2 {
+  font-size: 54px;
+  font-weight: 200;
+  padding: 0 0;
+}
+
+#wrapper h3 {
+  font-size: 24px;
+  font-weight: 200;
+  padding: 0 0;
 }
 
 .dashboards {
@@ -99,4 +109,24 @@ svg {
 a.icon-info {
   text-decoration: none;
   color: #888;
+}
+
+path {
+  fill: #CED8B6;
+}
+
+line {
+  stroke: #555;
+  stroke-width: 2px;
+}
+
+.axis path, .axis line {
+  stroke: #ccc;
+  fill: none;
+  shape-rendering: crispEdges;
+}
+
+text {
+  font-size: 12px;
+  fill: #666;
 }

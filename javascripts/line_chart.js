@@ -46,14 +46,10 @@
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
   // Creamos una etiqueta DIV que utilizaremos a modo de tooltip.
-  var tooltip_census = d3.select('.census')
-    .append('div')
-    .attr('class', 'tooltip')
-    .style('position', 'absolute')
-    .style('z-index', '20')
-    .style('top', (height + 30) + 'px')
-    .style('left', '500px');
-
+  var tooltip_census = svg
+    .append('text')
+    .attr({'x': 30, 'y': height - margin.top - 30})
+    .style({'font-size': '30px', 'font-weight': 'bold', 'fill': '#ddd'});
 
   d3.csv('assets/padron_jaca.csv', function(error, data) {
     color.domain(d3.keys(data[0]).filter(function(key) {
@@ -170,14 +166,14 @@
         d3.select(this)
           .style('stroke-width', 0.5)
           .style('stroke', 'red');
-        tooltip_census.html('Población en ' + d.date.getFullYear() + '<br>' + d.pop);
+        tooltip_census.html('Población en ' + d.date.getFullYear() + ': ' + d.pop);
       })
       .on('mouseout', function() {
         d3.select(this)
           .style('stroke-width', 0);
-        tooltip_census.html('Población total<br>' + censusTotal.values[censusTotal.values.length - 1].pop);
+        tooltip_census.html('Población total: ' + censusTotal.values[censusTotal.values.length - 1].pop);
       });
 
-    tooltip_census.html('Población total<br>' + censusTotal.values[censusTotal.values.length - 1].pop);
+    tooltip_census.html('Población total: ' + censusTotal.values[censusTotal.values.length - 1].pop);
   });
 })();
