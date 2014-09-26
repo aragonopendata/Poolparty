@@ -62,7 +62,6 @@ header {
   height: 450px;
   margin-top: 1em;
   margin-bottom: 1em;
-  border: 1px solid red;
 }
 
 .dashboard h3 {
@@ -90,3 +89,9 @@ footer a:hover {
   text-decoration: none;
 }
 
+svg {
+  margin: 0 auto;
+}
+.line {
+  fill: none;
+}
