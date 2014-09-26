@@ -20,8 +20,10 @@ function showGoogleMaps() {
 google.maps.event.addDomListener(window, 'load', showGoogleMaps);
 
 function toggleDashboard(){
-  $(this).parents('.dashboard').children('div').each(function() {
-    $(this).fadeToggle();
+  var divVisible = $(this).parents('.dashboard').children('div:visible:first');
+  var divInvisible = $(this).parents('.dashboard').children('div:hidden:first');
+  $(divVisible).fadeToggle('fast', function(){
+    $(divInvisible).fadeToggle();
   });
 };
 
