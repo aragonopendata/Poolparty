@@ -3,9 +3,9 @@
 (function() {
   var margin = {
     top: 20,
-    right: 100,
+    right: 10,
     bottom: 30,
-    left: 60
+    left: 45
   };
 
   var width = 550 - margin.left - margin.right;
