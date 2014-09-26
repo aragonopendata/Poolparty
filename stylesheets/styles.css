@@ -18,18 +18,17 @@ body {
   top: 60px;
   left: 90px;
   background: #ddd;
-  width: 200px;
+  width: 300px;
   opacity: 0.8;
 }
 
 #header h1 {
-  font-weight: 200;
   -webkit-margin-before: 0.6rem;
   -webkit-margin-after: 0.5rem;
   display:inline;
   vertical-align: middle;
   margin-bottom: 0;
-  font-size: 2em;
+  font-size: 6.5em;
   color: #fff;
   font-weight: 500;
   text-shadow: 0 1px 1px black;
@@ -39,6 +38,8 @@ body {
   color: #888;
   -webkit-margin-before: 0.2rem;
   -webkit-margin-after: 0.8rem;
+  margin-bottom: 0;
+  font-size: 2em;
 }
 
 #wrapper {
@@ -55,13 +56,15 @@ body {
 #wrapper h2 {
   font-size: 54px;
   font-weight: 200;
-  padding: 0 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #wrapper h3 {
   font-size: 24px;
   font-weight: 200;
-  padding: 0 0;
+  margin-top: 2px;
+  margin-bottom: 10px;
 }
 
 .dashboards {
