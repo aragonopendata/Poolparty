@@ -47,31 +47,20 @@
     })
     .text('Número de empresas');
 
-  var tooltipTotal = svgBar
-    .append('text')
-    .attr({
-      'x': (width + margin.left + margin.right) / 2,
-      'y': height + margin.top + 34
-    })
-    .attr({
-      'text-anchor': 'middle'
-    })
-    .style({
-      'font-size': '24px',
-      'font-weight': 'bold',
-      'fill': '#aaa'
-    })
-    .text('432');
-
 
   // Load the data
-
   var actividades_jaca = [];
+  var totalActividades = 0;
+  var tooltipTotal = null;
 
 
   d3.csv('/assets/actividades_jaca.csv', function(error, data) {
     data.forEach(function(d) {
       d.value = +d.value;
+    });
+
+    totalActividades = d3.sum(data, function(d) {
+      return d.value;
     });
 
 
@@ -81,6 +70,22 @@
 
     drawBars(actividades_jaca);
 
+    // Print total activities
+    tooltipTotal = svgBar
+      .append('text')
+      .attr({
+        'x': (width + margin.left + margin.right) / 2,
+        'y': height + margin.top + 34
+      })
+      .attr({
+        'text-anchor': 'middle'
+      })
+      .style({
+        'font-size': '24px',
+        'font-weight': 'bold',
+        'fill': '#aaa'
+      })
+      .text(totalActividades);
   });
 
 
@@ -125,7 +130,7 @@
         d3.select(this)
           .style('stroke-width', 0);
         tooltipTitle.html('Número de empresas');
-        tooltipTotal.html('432');
+        tooltipTotal.html(totalActividades);
       });
   }
 })();
