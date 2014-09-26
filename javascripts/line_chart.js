@@ -37,14 +37,14 @@ var line = d3.svg.line()
     return y(d.pop);
   });
 
-var svg = d3.select('.padron').append('svg')
+var svg = d3.select('.census').append('svg')
   .attr('width', width + margin.left + margin.right)
   .attr('height', height + margin.top + margin.bottom)
   .append('g')
   .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
 // Creamos una etiqueta DIV que utilizaremos a modo de tooltip.
-var tooltip_padron = d3.select('.padron')
+var tooltip_census = d3.select('.census')
   .append('div')
   .attr('class', 'tooltip')
   .style('position', 'absolute')
@@ -62,7 +62,7 @@ d3.csv('assets/padron_jaca.csv', function(error, data) {
     d.date = parseDate(d.date);
   });
 
-  var padron = color.domain().map(function(name) {
+  var census = color.domain().map(function(name) {
     return {
       name: name,
       values: data.map(function(d) {
@@ -73,11 +73,11 @@ d3.csv('assets/padron_jaca.csv', function(error, data) {
       })
     };
   });
-  padron = padron.filter(function(d) {
+  census = census.filter(function(d) {
     return d.name !== 'cod' && d.name !== 'mun';
   });
 
-  var padronTotal = padron.filter(function(d) {
+  var censusTotal = census.filter(function(d) {
     return d.name === 'total';
   })[0]; // NOTE: Returns an array with one value
 
@@ -85,8 +85,8 @@ d3.csv('assets/padron_jaca.csv', function(error, data) {
     return d.date;
   }));
   y.domain([0,
-    // d3.min(padron, function(c) { return d3.min(c.values, function(v) { return v.pop; }); }),
-    d3.max(padron, function(c) {
+    // d3.min(census, function(c) { return d3.min(c.values, function(v) { return v.pop; }); }),
+    d3.max(census, function(c) {
       return d3.max(c.values, function(v) {
         return v.pop;
       });
@@ -114,7 +114,7 @@ d3.csv('assets/padron_jaca.csv', function(error, data) {
     .text('Población');
 
   var city = svg.selectAll('.city')
-    .data(padron)
+    .data(census)
     .enter().append('g')
     .attr('class', 'city');
 
@@ -168,13 +168,13 @@ d3.csv('assets/padron_jaca.csv', function(error, data) {
       d3.select(this)
         .style('stroke-width', 0.5)
         .style('stroke', 'red');
-      tooltip_padron.html('Población en ' + d.date.getFullYear() + '<br>' + d.pop);
+      tooltip_census.html('Población en ' + d.date.getFullYear() + '<br>' + d.pop);
     })
     .on('mouseout', function() {
       d3.select(this)
         .style('stroke-width', 0);
-      tooltip_padron.html('Población total<br>' + padronTotal.values[padronTotal.values.length - 1].pop);
+      tooltip_census.html('Población total<br>' + censusTotal.values[censusTotal.values.length - 1].pop);
     });
 
-  tooltip_padron.html('Población total<br>' + padronTotal.values[padronTotal.values.length - 1].pop);
+  tooltip_census.html('Población total<br>' + censusTotal.values[censusTotal.values.length - 1].pop);
 });
