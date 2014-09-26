@@ -45,7 +45,6 @@
     .append('g')
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-  // Creamos una etiqueta DIV que utilizaremos a modo de tooltip.
   var tooltip_census = svg
     .append('text')
     .attr({'x': 30, 'y': height - margin.top - 30})
