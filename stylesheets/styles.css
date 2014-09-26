@@ -95,3 +95,8 @@ svg {
 .line {
   fill: none;
 }
+
+a.icon-info {
+  text-decoration: none;
+  color: #888;
+}
