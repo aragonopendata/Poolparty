@@ -5,19 +5,15 @@ function showGoogleMaps() {
   var latLng = new google.maps.LatLng(position[0], position[1]);
 
   var mapOptions = {
-    zoom: 13,
+    zoom: 14,
     streetViewControl: false, // hide the yellow Street View pegman
-    scaleControl: true, // allow users to zoom the Google Map
+    scaleControl: true,       // allow users to zoom the Google Map
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-    center: latLng,
-    draggable: true
+    center: latLng
   };
 
-  map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
+  new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 }
-
-google.maps.event.addDomListener(window, 'load', showGoogleMaps);
 
 function toggleDashboard(){
   var divVisible = $(this).parents('.dashboard').children('div:visible:first');
@@ -31,4 +27,6 @@ $(document).ready(function(){
   $('.info').hide();
 
   $('.icon-info').on('click', toggleDashboard);
+
+  showGoogleMaps();
 });
