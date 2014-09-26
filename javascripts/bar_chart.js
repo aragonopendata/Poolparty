@@ -105,7 +105,6 @@
       })
       .attr('width', xScale.rangeBand())
       .attr('height', function(d) {
-        console.log(d.value);
         return d.value;
       })
       .attr('fill', function(d) {
