@@ -18,3 +18,15 @@ function showGoogleMaps() {
 }
 
 google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+
+function toggleDashboard(){
+  $(this).parents('.dashboard').children('div').each(function() {
+    $(this).fadeToggle();
+  });
+};
+
+$(document).ready(function(){
+  $('.info').hide();
+
+  $('.icon-info').on('click', toggleDashboard);
+});

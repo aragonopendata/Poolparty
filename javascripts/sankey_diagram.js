@@ -10,7 +10,7 @@ var color = d3.scale.ordinal()
         .range(['#8DD3C7', '#FFFFB3', '#BEBADA', '#FB8072', '#80B1D3', '#FDB462', '#ed3131', '#595be5', '#D9D9D9', '#BC80BD', '#CCEBC5', '#FFED6F']);   
 
 // append the svg canvas to the page
-var svg2 = d3.select("body").append("svg")
+var svg2 = d3.select(".votes").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -26,7 +26,7 @@ var sankey = d3.sankey()
 var path = sankey.link();
 
 // load the data
-d3.csv("em_votos_jaca.csv", function(error, data) {
+d3.csv("/assets/em_votos_jaca.csv", function(error, data) {
 
   //set up graph in same style as original example but empty
   graph = {"nodes" : [], "links" : []};
