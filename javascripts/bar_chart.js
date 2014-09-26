@@ -25,7 +25,11 @@
   var svgBar = d3.select('.activities')
     .append('svg')
     .attr('width', width + margin.left + margin.right)
-    .attr('height', height + margin.top + margin.bottom);
+    .attr('height', height + margin.top + margin.bottom)
+    .append('g')
+    .call(d3.behavior.zoom().scaleExtent([1, 8]).on('zoom', function() {
+      svgBar.attr('transform', 'translate(' + d3.event.translate + ')scale(' + d3.event.scale + ')');
+    }));
 
   var tooltipTitle = svgBar
     .append('text')
