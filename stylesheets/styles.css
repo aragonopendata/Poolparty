@@ -121,6 +121,8 @@ footer a:visited,
 footer a:hover {
   color: white;
   text-decoration: none;
+  cursor: pointer;
+  cursor: hand;
 }
 
 svg {
@@ -133,6 +135,8 @@ svg {
 a.icon-info {
   text-decoration: none;
   color: #888;
+  cursor: pointer;
+  cursor: hand;
 }
 
 path {
