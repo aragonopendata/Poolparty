@@ -1,0 +1,86 @@
+body {
+  font-family: "proxima-nova-1","proxima-nova-2", Helvetica, Verdana, sans-serif;
+  color: #505050;
+}
+
+header {
+  background: black;
+  color: white;
+  height: 1.6rem;
+  text-align: left;
+  font-size: 1rem;
+  padding-top: .6rem;
+  padding-left: 1rem;
+}
+
+#header {
+  position: absolute;
+  margin-top: 2rem;
+  text-align: center;
+  top: 60px;
+  left: 90px;
+  background: #ddd;
+  width: 200px;
+  opacity: 0.8;
+}
+
+#header h1 {
+  font-weight: 200;
+  -webkit-margin-before: 0.6rem;
+  -webkit-margin-after: 0.5rem;
+  display:inline;
+  color: black;
+}
+
+#header h2 {
+  color: #888;
+  -webkit-margin-before: 0.2rem;
+  -webkit-margin-after: 0.8rem;
+}
+
+#wrapper {
+  width: 978px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  height: 1%;
+  position: relative;
+}
+
+#map-canvas {
+  height: 400px;
+  width: 100%;
+  z-index: -999999999999;
+}
+
+.dashboard {
+  height: 450px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.dashboard h3 {
+  font-size: .9rem;
+  margin-bottom: .1rem;
+}
+
+.dashboard p {
+  font-size: .8rem;
+}
+
+footer {
+  background: black;
+  color: white;
+  height: 30px;
+  text-align: center;
+  font-size: .8rem;
+  padding-top: .8rem;
+}
+
+footer a,
+footer a:visited,
+footer a:hover {
+  color: white;
+  text-decoration: none;
+}
+
