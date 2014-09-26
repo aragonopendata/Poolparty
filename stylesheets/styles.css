@@ -131,6 +131,11 @@ text {
   fill: #666;
 }
 
+.votes text {
+  font-size: 12px;
+  fill: black;
+}
+
 .legend rect {
   fill:white;
   stroke:black;
