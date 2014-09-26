@@ -9,9 +9,12 @@
   <![endif]-->
   <link rel="stylesheet" href="/stylesheets/pure-min.css">
   <link rel="stylesheet" href="/stylesheets/styles.css">
+  <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBUwp-nYrbNOempM4YsDfu1HXu9wxLJjPY"></script>
   <script type="text/javascript" src="/javascripts/application.js"></script>
   <script type="text/javascript" src="/javascripts/d3.v3.min.js"></script>
+  <script type="text/javascript" src="/javascripts/jquery-2.1.1.min.js"></script>
 </head>
 <body>
   <div class="pure-menu pure-menu-horizontal">Visual Aragopedia</div>
@@ -31,8 +34,11 @@
         <div class="pure-g">
           <div class="pure-u-1-2">
             <div class="dashboard">
-              <h3>Padrón</h3>
-              <div class="padron"></div>
+              <h3>Padrón <a class="icon-info"><i class="fa fa-info-circle"></i></a></h3>
+              <div class="census"></div>
+              <div class="info">
+                <p>Explotación y difusión de las cifras oficiales de población de todos los municipios aragoneses, comarcas y provincias a 1 de enero de cada año a partir de las cifras aprobadas por el Gobierno y publicadas en BOE. Referencia al 1 de enero de cada año.</p>
+              </div>
             </div>
           </div>
 
@@ -52,5 +58,18 @@
   </footer>
 
   <script src="javascripts/line_chart.js"></script>
+  <script>
+    function toggleDashboard(){
+      $(this).parents('.dashboard').children('div').each(function() {
+        $(this).fadeToggle();
+      });
+    };
+
+    $(document).ready(function(){
+      $('.info').hide();
+
+      $('.icon-info').on('click', toggleDashboard);
+    });
+  </script>
 </body>
 </html>
