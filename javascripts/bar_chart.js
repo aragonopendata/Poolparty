@@ -43,7 +43,7 @@
     .style({
       'font-size': '20px',
       'font-weight': 'bold',
-      'fill': '#ddd'
+      'fill': '#aaa'
     })
     .text('Número de empresas');
 
@@ -59,7 +59,7 @@
     .style({
       'font-size': '24px',
       'font-weight': 'bold',
-      'fill': '#ddd'
+      'fill': '#aaa'
     })
     .text('432');
 
