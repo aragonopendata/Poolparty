@@ -86,7 +86,7 @@
       // d3.min(census, function(c) { return d3.min(c.values, function(v) { return v.pop; }); }),
       d3.max(census, function(c) {
         return d3.max(c.values, function(v) {
-          return v.pop;
+          return v.pop * 1.2;
         });
       })
     ]);
@@ -114,7 +114,10 @@
     var city = svg.selectAll('.city')
       .data(census)
       .enter().append('g')
-      .attr('class', 'city');
+      .attr('class', 'city')
+      .attr('data-legend-color', function(d) {
+        return color(d.name);
+      });
 
     city.append('path')
       .attr('class', 'line')
@@ -123,25 +126,6 @@
       })
       .style('stroke', function(d) {
         return color(d.name);
-      });
-
-    city.append('text')
-      .datum(function(d) {
-        return {
-          name: d.name,
-          value: d.values[d.values.length - 1]
-        };
-      })
-      .attr('transform', function(d) {
-        return 'translate(' + x(d.value.date) + ',' + y(d.value.pop) + ')';
-      })
-      .attr('x', 3)
-      .attr('dy', function(d) {
-        return d.name === 'hombres' ? '.9em' : '-.35em';
-      })
-      .attr('dx', '.35em')
-      .text(function(d) {
-        return d.name;
       });
 
     var point = city.append('g')
@@ -175,5 +159,15 @@
       });
 
     tooltip_census.html('Población total: ' + censusTotal.values[censusTotal.values.length - 1].pop);
+
+    /* Legend */
+    city.attr('data-legend',function(d) { return d.name;});
+
+    svg.append('g')
+      .attr('class', 'legend')
+      .attr('transform', 'translate(50,30)')
+      .style('font-size', '12px')
+      .call(d3.legend);
+    /* end legend */
   });
 })();
