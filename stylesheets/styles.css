@@ -50,18 +50,18 @@ body {
 #map-canvas {
   height: 400px;
   width: 100%;
-  z-index: -999999999999;
 }
 
-#wrapper h2 {
+.dashboards h2 {
   font-size: 44px;
   font-weight: 200;
   margin-top: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #ccc;
+  padding-left: 10px;
 }
 
-#wrapper h3 {
+.dashboard h3 {
   font-size: 24px;
   font-weight: 200;
   margin-top: 2px;
@@ -85,20 +85,27 @@ body {
   border-right: 1px solid #ccc;
 }
 
-.dashboard h3 {
-  font-size: .9rem;
-  margin-bottom: .1rem;
-}
-
 .dashboard p {
   font-size: .8rem;
 }
 
+/*'rgb(179,226,205)','rgb(253,205,172)','rgb(203,213,232)','rgb(244,202,228)']
+ */
 .population {
+  /*background: #F0F9F5;*/
+  background: #fff;
 }
 
 .elections {
+  /*background: #FFF5EE;*/
+  background: #fff;
 }
+
+.economy {
+  /*background: #FAFBFD;*/
+  background: #fff;
+}
+
 
 footer {
   background: black;
