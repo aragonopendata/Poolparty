@@ -7,45 +7,47 @@
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/stylesheets/pure-min.css">
+  <link rel="stylesheet" href="/stylesheets/styles.css">
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBUwp-nYrbNOempM4YsDfu1HXu9wxLJjPY"></script>
-  <script type="text/javascript" src="application.js"></script>
+  <script type="text/javascript" src="/javascripts/application.js"></script>
 </head>
 <body>
-  <header>
-    Visual Aragopedia
-  </header>
+  <div class="pure-menu pure-menu-horizontal">Visual Aragopedia</div>
 
-  <div id="map-canvas"></div>
+  <div id="map-canvas" class="banner" hidden></div>
 
-  <div id="header">
+  <div id="header" hidden>
     <h1>Jaca</h1>
-    <h2>La Jacetina</h2>
+    <h2>La Jacetanea</h2>
   </div>
 
   <div id="wrapper">
-    <div class="pure-g" id="dashboards">
-      <div class="dashboard pure-u-1-2">
-        <h3>Población</h3>
-        <p>
-          <img src="i1.png"/>
-        </p>
+    <div class="pure-g dashboards">
+
+      <div class="pure-u-1">
+        <h2>Población</h2>
+        <div class="pure-g">
+          <div class="pure-u-1-2">
+            <div class="dashboard">
+              <h3>Padrón</h3>
+              <p>
+                <img src="i1.png"/>
+              </p>
+            </div>
+          </div>
+
+          <div class="pure-u-1-2">
+            <div class="dashboard">
+              <h3>Tasa de paro</h3>
+              <p>
+                <img src="i2.png"/>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="dashboard pure-u-1-2">
-        <h3>Tasa de paro</h3>
-        <p>
-          <img src="i2.png"/>
-        </p>
-      </div>
-
-      <div class="dashboard pure-u-1-2">
-        <h3>Tendencias Ayuntamiento</h3>
-        <p>
-          <img src="i3.png"/>
-        </p>
-      </div>
     </div>
   </div>
 
