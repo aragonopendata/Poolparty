@@ -9,6 +9,7 @@ function showGoogleMaps() {
     streetViewControl: false, // hide the yellow Street View pegman
     scaleControl: true,       // allow users to zoom the Google Map
     mapTypeId: google.maps.MapTypeId.ROADMAP,
+    scrollwheel: false,
     center: latLng
   };
 
