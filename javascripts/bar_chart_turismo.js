@@ -1,17 +1,20 @@
+'use strict';
+
+(function(){
 // // Set the dimensions for both
 // 	var margin = 50;
 // 	var width = 800;
 // 	var	height = 400;	
 
-var margin = {top: 20, right: 20, bottom: 30, left: 50},
+var margin = {top: 20, right: 20, bottom: 60, left: 50},
     width = 500 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+    height = 400 - margin.top - margin.bottom;
 
 var width2 = 100;
 
 // Set the scale
 var yScale = d3.scale.ordinal()
-				.rangeRoundBands([0, height + margin.top + margin.bottom], 0.3); // Range for the bands plus, percentage of each band dedicated to be space.
+				.rangeRoundBands([0, height + margin.top], 0.3); // Range for the bands plus, percentage of each band dedicated to be space.
 
 var xScale = d3.scale.linear()
 				.range([0, width - margin.left * 1.8]);	
@@ -28,28 +31,33 @@ var yAxis = d3.svg.axis()
 
 
 // Create the SVG
-var svgBar = d3.select(".bar")
+var svgBar = d3.select(".tourism")
 			.append("svg")
 			.attr("width", width2)
 			.attr("height", height + margin.top + margin.bottom);
 // Create the SVG
-var svgBar2 = d3.select(".bar")
+var svgBar2 = d3.select(".tourism")
 			.append("svg")
 			.attr("width", width)
 			.attr("height", height + margin.top + margin.bottom)
 			.attr("margin.left", margin.left);
 
 // Creamos una etiqueta DIV que utilizaremos a modo de tooltip.
-var tooltip = d3.select(".bar")
-                .append("div")
-                .attr("class", "tooltip")
-                .style("position", "absolute")
-                .style("z-index", "20")
-				.style("top", "30px")
-                .style("left", "500px")
-                .html("<p>Nº total plazas: *432*</p>");		
-	
-
+var tooltip = svgBar2
+      .append('text')
+      .attr({
+        'x': 200,
+        'y': height + margin.top + 40
+      })
+      .attr({
+        'text-anchor': 'middle'
+      })
+      .style({
+        'font-size': '20px',
+        'font-weight': 'bold',
+        'fill': '#aaa'
+      })
+      .text('CHANGE ME');
 
 
 // Load the data
@@ -57,7 +65,7 @@ var tooltip = d3.select(".bar")
 var turismo_jaca = [];
 
 
-d3.csv("turismo_jaca.csv", function (error, data) {
+d3.csv("/assets/turismo_jaca.csv", function (error, data) {
 	data.forEach(function (d) {
 		d.plazas = +d.plazas;
 		d.establecimientos = +d.establecimientos;
@@ -94,7 +102,6 @@ svgBar.append("g")
       .call(yAxis)
     .append("text")
       .attr("y", 6)
-      //.attr("dy", ".71em")
       .style("text-anchor", "end");
 
 
@@ -112,12 +119,12 @@ svgBar.append("g")
                 d3.select(this)
                   .style("stroke-width", 0.5)
                   .style("stroke", "red");
-                tooltip.html( "<p>" + d.tipo + "<br> Plazas: " + d.plazas + "</p>" );
+                tooltip.text( d.tipo + " plazas: " + d.plazas);
                     })
         .on("mouseout", function (d) {
         	d3.select(this)
         		.style("stroke-width", 0);
-        	tooltip.html("Nº empresas total: 432")
+        	tooltip.text("CHANGE ME")
         });
 
 
@@ -135,13 +142,12 @@ svgBar.append("g")
                 d3.select(this)
                   .style("stroke-width", 0.5)
                   .style("stroke", "red");
-                tooltip.html( "<p>" + d.tipo + "<br> Nº establecimientos: " + d.establecimientos + "</p>" );
-                    })
-        .on("mouseout", function (d) {
-        	d3.select(this)
-        		.style("stroke-width", 0);
-        	tooltip.html("Nº empresas total: 432")
-        });
-
-
-};
+                tooltip.text( d.tipo + " establecimientos: " + d.establecimientos);
+    })
+    .on("mouseout", function (d) {
+      d3.select(this)
+        .style("stroke-width", 0);
+      tooltip.text("CHANGE ME")
+    });
+  };
+})();
