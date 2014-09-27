@@ -14,11 +14,13 @@ body {
 #header {
   position: absolute;
   margin-top: 2rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
   text-align: center;
   top: 60px;
   left: 90px;
   background: #ddd;
-  width: 300px;
+  width: auto;
   opacity: 0.8;
 }
 
