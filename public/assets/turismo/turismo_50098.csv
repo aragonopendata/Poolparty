@@ -1,2 +1,5 @@
-"x"
-"turismo_50098"
+"establecimientos","plazas","tipo","cod","mun"
+1,10,"Casas Rurales","50098","Encinacorba"
+1,7,"Hoteles","50098","Encinacorba"
+0,0,"Apartamentos","50098","Encinacorba"
+0,0,"Campings","50098","Encinacorba"

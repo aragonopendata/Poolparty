@@ -1,2 +1,5 @@
-"x"
-"turismo_22115"
+"establecimientos","plazas","tipo","cod","mun"
+3,123,"Hoteles","22115","Grado (El)"
+3,24,"Casas Rurales","22115","Grado (El)"
+1,14,"Apartamentos","22115","Grado (El)"
+0,0,"Campings","22115","Grado (El)"
