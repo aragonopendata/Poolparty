@@ -97,7 +97,7 @@ function drawBars (data) {
       d3.select(this)
         .style("stroke-width", 0.5)
         .style("stroke", "red");
-      tooltip.text( d.tipo + " plazas: " + d.plazas);
+      tooltip.text( "Plazas en " + d.tipo.toLowerCase() + ": " + d.plazas);
     })
   .on("mouseout", function (d) {
     d3.select(this)
@@ -119,7 +119,7 @@ function drawBars (data) {
       d3.select(this)
         .style("stroke-width", 0.5)
         .style("stroke", "red");
-      tooltip.text( d.tipo + " establecimientos: " + d.establecimientos);
+      tooltip.text( "Número de " + d.tipo.toLowerCase() + ": " + d.establecimientos);
     })
   .on("mouseout", function (d) {
     d3.select(this)
