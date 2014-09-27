@@ -18,7 +18,20 @@ get '/' do
   erb :index
 end
 
-get '/city/:id' do
-  @city = cities.find(params[:id])
-  erb :city
+post '/form' do
+  if @city = cities.find_by_name(params[:name])
+    redirect '/' + @city[:name]
+  else
+    @error = "No se ha encontrado ningún municipio '#{params[:name]}'"
+    erb :index
+  end
+end
+
+get '/:name' do
+  if @city = cities.find_by_name(params[:name])
+    erb :city
+  else
+    @error = "No se ha encontrado ningún municipio '#{params[:name]}'"
+    erb :index
+  end
 end

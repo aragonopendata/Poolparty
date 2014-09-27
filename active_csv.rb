@@ -16,5 +16,14 @@ class ActiveCsv
 
   def find(ine)
     @csv[ine]
+  rescue
+    nil
   end
+
+  def find_by_name(name)
+    @csv.detect{|h| h[1][:name].downcase == name.downcase }[1]
+  rescue
+    nil
+  end
+
 end
