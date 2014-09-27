@@ -120,5 +120,13 @@
   <script src="javascripts/sankey_diagram.js"></script>
   <script src="javascripts/bar_chart.js"></script>
   <script src="javascripts/bar_chart_turismo.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      activitiesBarChart.csvFile = '/assets/actividades_jaca.csv';
+      activitiesBarChart.graphSelector = '.activities';
+      activitiesBarChart.draw();
+    });
+  </script>
 </body>
 </html>
