@@ -2,7 +2,7 @@
 
 var tourismBarChart = {
   csvFile: null,
-  graphSelector: null,
+  graphSelector: '.tourism',
 
   draw: function() {
 

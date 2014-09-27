@@ -2,7 +2,7 @@
 
 var activitiesBarChart = {
   csvFile: null,
-  graphSelector: null,
+  graphSelector: '.activities',
 
   draw: function() {
     var margin = {

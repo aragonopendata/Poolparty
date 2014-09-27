@@ -2,7 +2,7 @@
 
 var censusLinesChart = {
   csvFile: null,
-  graphSelector: null,
+  graphSelector: '.census',
 
   draw: function() {
     var margin = {

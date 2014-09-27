@@ -2,7 +2,7 @@
 
 var votesSankey = {
   csvFile: null,
-  graphSelector: null,
+  graphSelector: '.votes',
 
   draw: function() {
     var units = 'Votos';
