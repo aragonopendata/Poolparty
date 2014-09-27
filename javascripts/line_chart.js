@@ -51,6 +51,18 @@
     .attr({'x': (width + margin.right)/2, 'y': height - margin.top - 30})
     .style({'font-size': '26px', 'font-weight': 'bold', 'fill': '#aaa'});
 
+  function setTooltipTotal(tooltip, data){
+    var censusTotal = data.filter(function(d) {
+      return d.name === 'total';
+    })[0]; // NOTE: Returns an array with one value
+
+    var lastYear  = data.filter(function(d) {
+      return d.name === 'total';
+    })[0].values[censusTotal.values.length - 1].date.getFullYear();
+
+    tooltip.html('Población total en ' + lastYear + ': ' + censusTotal.values[censusTotal.values.length - 1].pop);
+  }
+
   d3.csv('assets/padron_jaca.csv', function(error, data) {
     color.domain(d3.keys(data[0]).filter(function(key) {
       return key !== 'date';
@@ -74,10 +86,6 @@
     census = census.filter(function(d) {
       return d.name !== 'cod' && d.name !== 'mun';
     });
-
-    var censusTotal = census.filter(function(d) {
-      return d.name === 'total';
-    })[0]; // NOTE: Returns an array with one value
 
     x.domain(d3.extent(data, function(d) {
       return d.date;
@@ -156,10 +164,10 @@
       .on('mouseout', function() {
         d3.select(this)
           .style('stroke-width', 0);
-        tooltip.html('Población total en 2013: ' + censusTotal.values[censusTotal.values.length - 1].pop);
+        setTooltipTotal(tooltip, census);
       });
 
-    tooltip.html('Población total en 2013: ' + censusTotal.values[censusTotal.values.length - 1].pop);
+    setTooltipTotal(tooltip, census);
 
     /* Legend */
     city.attr('data-legend',function(d) { return d.name;});
