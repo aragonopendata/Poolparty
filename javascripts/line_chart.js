@@ -45,7 +45,7 @@
     .append('g')
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-  var tooltip_census = svg
+  var tooltip = svg
     .append('text')
     .attr({'text-anchor': 'middle'})
     .attr({'x': (width + margin.right)/2, 'y': height - margin.top - 30})
@@ -151,15 +151,15 @@
         d3.select(this)
           .style('stroke-width', 0.5)
           .style('stroke', 'red');
-        tooltip_census.html('Población ' + this.parentNode.__data__.name + ' en ' + d.date.getFullYear() + ': ' + d.pop);
+        tooltip.html('Población ' + this.parentNode.__data__.name + ' en ' + d.date.getFullYear() + ': ' + d.pop);
       })
       .on('mouseout', function() {
         d3.select(this)
           .style('stroke-width', 0);
-        tooltip_census.html('Población total en 2013: ' + censusTotal.values[censusTotal.values.length - 1].pop);
+        tooltip.html('Población total en 2013: ' + censusTotal.values[censusTotal.values.length - 1].pop);
       });
 
-    tooltip_census.html('Población total en 2013: ' + censusTotal.values[censusTotal.values.length - 1].pop);
+    tooltip.html('Población total en 2013: ' + censusTotal.values[censusTotal.values.length - 1].pop);
 
     /* Legend */
     city.attr('data-legend',function(d) { return d.name;});
