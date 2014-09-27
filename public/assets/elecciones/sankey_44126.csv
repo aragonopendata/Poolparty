@@ -1,2 +1,10 @@
-"x"
-"sankey_44126"
+"source","target","value"
+"Votos a candidaturas 2007","PSOE 2007",82
+"Votos a candidaturas 2007","PP 2007",131
+"Votos a candidaturas 2007","PAR 2007",107
+"PSOE 2007","Votos a candidaturas 2011",82
+"PP 2007","Votos a candidaturas 2011",131
+"PAR 2007","Votos a candidaturas 2011",107
+"Votos a candidaturas 2011","PSOE 2011",104
+"Votos a candidaturas 2011","PP 2011",95
+"Votos a candidaturas 2011","PAR 2011",52

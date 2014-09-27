@@ -1,2 +1,13 @@
-"x"
-"sankey_22160"
+"source","target","value"
+"Votos a candidaturas 2007","PSOE 2007",40
+"Votos a candidaturas 2007","PP 2007",25
+"Votos a candidaturas 2007","CHA 2007",96
+"Votos a candidaturas 2007","AEN.M 2007",11
+"PSOE 2007","Votos a candidaturas 2011",40
+"PP 2007","Votos a candidaturas 2011",25
+"CHA 2007","Votos a candidaturas 2011",96
+"AEN.M 2007","Votos a candidaturas 2011",11
+"Votos a candidaturas 2011","PSOE 2011",40
+"Votos a candidaturas 2011","PP 2011",42
+"Votos a candidaturas 2011","PAR 2011",79
+"Votos a candidaturas 2011","A.E.NAVAL.MIPANAS 2011",15
