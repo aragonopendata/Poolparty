@@ -133,18 +133,24 @@ header h1 {
 footer {
   background: black;
   color: white;
-  height: 30px;
   text-align: center;
-  font-size: .8rem;
+  font-size: .9rem;
   padding-top: .8rem;
+  padding-bottom: .8rem;
   width:100%;
+}
+
+footer.home {
+  position:absolute;
+  bottom:0;
+  left:0;
+  height: 80px;
 }
 
 footer a,
 footer a:visited,
 footer a:hover {
   color: white;
-  text-decoration: none;
   cursor: pointer;
   cursor: hand;
 }
