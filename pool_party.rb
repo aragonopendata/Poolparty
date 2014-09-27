@@ -1,13 +1,13 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 
-set :public_folder, settings.root + '/static'
+set :public_folder, settings.root + '/public'
 set :views, settings.root + '/templates'
 
 get '/' do
-  'Lista ciudades'
+  erb :city
 end
 
 get '/city/:id' do
-  "Ciudad con id: #{params[:id]}"
+  erb :city
 end
