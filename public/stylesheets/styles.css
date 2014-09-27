@@ -26,7 +26,7 @@ body {
 
 header h1 {
   font-family: 'Lobster', Georgia, Times, serif;
-  font-size: 70px;
+  font-size: 90px;
   line-height: 20px;
   padding-bottom: 20px;
   text-shadow: 2px 2px 2px #ccc;
@@ -66,8 +66,13 @@ header h1 {
 .search {
   max-width: 1024px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 90px;
   min-height: 300px;
+}
+
+.buttons button{
+  margin-top: 1em;
+  float: right;
 }
 
 .dashboards h2 {
@@ -132,6 +137,10 @@ footer {
   text-align: center;
   font-size: .8rem;
   padding-top: .8rem;
+  width:100%;
+	position:absolute;
+	bottom:0;
+	left:0;
 }
 
 footer a,

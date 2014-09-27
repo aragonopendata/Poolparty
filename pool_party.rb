@@ -22,7 +22,7 @@ post '/form' do
   if @city = cities.find_by_name(params[:name])
     redirect '/' + @city[:name]
   else
-    @error = "No se ha encontrado ningún municipio '#{params[:name]}'"
+    @error = "No se ha encontrado ningún municipio '#{params[:name]}' en la provincia de Aragón"
     erb :index
   end
 end
@@ -31,7 +31,7 @@ get '/:name' do
   if @city = cities.find_by_name(params[:name])
     erb :city
   else
-    @error = "No se ha encontrado ningún municipio '#{params[:name]}'"
+    @error = "No se ha encontrado ningún municipio '#{params[:name]} en la provincia de Aragón'"
     erb :index
   end
 end
