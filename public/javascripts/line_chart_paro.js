@@ -80,8 +80,6 @@ var unemploymentLinesChart = {
       });
       padron = padron.filter(function (d) {return d.name !== "cod" && d.name !== "mun";});
 
-      console.log(padron);
-      
       x.domain(d3.extent(data, function(d) { return d.date; }));
       y.domain([0,
         // d3.min(padron, function(c) { return d3.min(c.values, function(v) { return v.pop; }); }),

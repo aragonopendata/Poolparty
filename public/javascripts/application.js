@@ -1,11 +1,10 @@
-var position = [42.571716599999990000, -0.547055399999976500];
 
-function showGoogleMaps() {
+function showGoogleMaps(position) {
 
   var latLng = new google.maps.LatLng(position[0], position[1]);
 
   var mapOptions = {
-    zoom: 14,
+    zoom: 12,
     streetViewControl: false, // hide the yellow Street View pegman
     scaleControl: true,       // allow users to zoom the Google Map
     mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -29,5 +28,15 @@ $(document).ready(function(){
 
   $('.icon-info').on('click', toggleDashboard);
 
-  showGoogleMaps();
+  var location = $('#map-canvas').data('location');
+  var position = [];
+
+  var url = "http://jacathon-huracan.cartodb.com/api/v2/sql?q=SELECT%20ST_X(ST_Centroid(the_geom::geometry)),ST_Y(ST_Centroid(the_geom::geometry))%20FROM%20esp_adm4%20WHERE%20name_4=%27" + location + "%27"
+  jQuery.get(url, function(data){
+    position[0] = data.rows[0].st_y;
+    position[1] = data.rows[0].st_x;
+    console.log(position);
+    showGoogleMaps(position);
+  });
+
 });
