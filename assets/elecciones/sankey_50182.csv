@@ -1,2 +1,18 @@
-"x"
-"sankey_50182"
+"source","target","value"
+"Votos a candidaturas 2007","PSOE 2007",378
+"Votos a candidaturas 2007","PP 2007",445
+"Votos a candidaturas 2007","PAR 2007",1254
+"Votos a candidaturas 2007","CHA 2007",165
+"PSOE 2007","Votos a candidaturas 2011",378
+"PP 2007","Votos a candidaturas 2011",445
+"PAR 2007","Votos a candidaturas 2011",1254
+"CHA 2007","Votos a candidaturas 2011",165
+"Votos a candidaturas 2011","PSOE 2011",221
+"Votos a candidaturas 2011","PP 2011",778
+"Votos a candidaturas 2011","PAR 2011",112
+"Votos a candidaturas 2011","CHA 2011",370
+"Votos a candidaturas 2011","IU 2011",123
+"Votos a candidaturas 2011","UPyD 2011",111
+"Votos a candidaturas 2011","COMPROMISO.CON.ARAGON 2011",8
+"Votos a candidaturas 2011","FIA 2011",456
+"Votos a candidaturas 2011","CDL 2011",258

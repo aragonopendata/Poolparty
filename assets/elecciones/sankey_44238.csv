@@ -1,2 +1,15 @@
-"x"
-"sankey_44238"
+"source","target","value"
+"Votos a candidaturas 2007","PSOE 2007",766
+"Votos a candidaturas 2007","PP 2007",106
+"Votos a candidaturas 2007","PAR 2007",813
+"Votos a candidaturas 2007","IU 2007",154
+"PSOE 2007","Votos a candidaturas 2011",766
+"PP 2007","Votos a candidaturas 2011",106
+"PAR 2007","Votos a candidaturas 2011",813
+"IU 2007","Votos a candidaturas 2011",154
+"Votos a candidaturas 2011","PSOE 2011",767
+"Votos a candidaturas 2011","PP 2011",155
+"Votos a candidaturas 2011","PAR 2011",116
+"Votos a candidaturas 2011","IU 2011",84
+"Votos a candidaturas 2011","CHA 2011",33
+"Votos a candidaturas 2011","COMPROMISO.CON.ARAGON 2011",699

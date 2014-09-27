@@ -1,2 +1,18 @@
-"x"
-"sankey_50067"
+"source","target","value"
+"Votos a candidaturas 2007","PSOE 2007",2660
+"Votos a candidaturas 2007","PP 2007",4309
+"Votos a candidaturas 2007","PAR 2007",1777
+"Votos a candidaturas 2007","CHA 2007",938
+"Votos a candidaturas 2007","IU 2007",138
+"PSOE 2007","Votos a candidaturas 2011",2660
+"PP 2007","Votos a candidaturas 2011",4309
+"PAR 2007","Votos a candidaturas 2011",1777
+"CHA 2007","Votos a candidaturas 2011",938
+"IU 2007","Votos a candidaturas 2011",138
+"Votos a candidaturas 2011","PSOE 2011",2457
+"Votos a candidaturas 2011","PP 2011",4758
+"Votos a candidaturas 2011","PAR 2011",1494
+"Votos a candidaturas 2011","CHA 2011",473
+"Votos a candidaturas 2011","IU 2011",206
+"Votos a candidaturas 2011","UPyD 2011",140
+"Votos a candidaturas 2011","FIA 2011",134

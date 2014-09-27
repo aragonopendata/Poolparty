@@ -1,2 +1,12 @@
-"x"
-"sankey_50138"
+"source","target","value"
+"Votos a candidaturas 2007","PP 2007",7
+"Votos a candidaturas 2007","PAR 2007",32
+"Votos a candidaturas 2007","CHA 2007",2
+"PP 2007","Votos a candidaturas 2011",7
+"PAR 2007","Votos a candidaturas 2011",32
+"CHA 2007","Votos a candidaturas 2011",2
+"Votos a candidaturas 2011","PP 2011",21
+"Votos a candidaturas 2011","PAR 2011",7
+"Votos a candidaturas 2011","CHA 2011",8
+"Votos a candidaturas 2011","PSOE 2011",11
+"Votos a candidaturas 2011","COMPROMISO.CON.ARAGON 2011",14
