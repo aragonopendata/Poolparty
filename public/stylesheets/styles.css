@@ -4,11 +4,19 @@ body {
 }
 
 .pure-menu {
-  height: 36px;
-  text-align: left;
-  font-size: 1em;
-  padding-top: .6em;
-  padding-left: 1em;
+  font-family: 'Lobster', Georgia, Times, serif;
+  font-size: 1.8em;
+  background-color: #000;
+  font-color: #fff;
+  padding-bottom: 20px;
+  text-align: center;
+  height: 32px;
+  line-height: 20px;
+}
+
+.pure-menu a,
+.pure-menu a:hover {
+  color: #fff;
 }
 
 #header {

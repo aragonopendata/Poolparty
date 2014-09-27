@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/stylesheets/pure-min.css">
   <link rel="stylesheet" href="/stylesheets/styles.css">
   <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBUwp-nYrbNOempM4YsDfu1HXu9wxLJjPY"></script>
   <script type="text/javascript" src="/javascripts/d3.v3.min.js"></script>
@@ -19,8 +20,9 @@
   <script type="text/javascript" src="/javascripts/application.js"></script>
 </head>
 <body>
-  <div id="map-canvas" class="banner" data-location="<%= @city[:name] %>"></div>
+  <div class="pure-menu pure-menu-horizontal"><a href="/">Visual Aragopedia</a></div>
 
+  <div id="map-canvas" class="banner" data-location="<%= @city[:name] %>"></div>
   <div id="header">
     <h1><%= @city[:name] %></h1>
     <h2><%= @city[:region] %></h2>
