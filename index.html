@@ -123,6 +123,10 @@
 
   <script>
     $(document).ready(function(){
+      censusLinesChart.csvFile = '/assets/padron_jaca.csv';
+      censusLinesChart.graphSelector = '.census';
+      censusLinesChart.draw();
+
       activitiesBarChart.csvFile = '/assets/actividades_jaca.csv';
       activitiesBarChart.graphSelector = '.activities';
       activitiesBarChart.draw();
