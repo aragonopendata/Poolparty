@@ -1,2 +1,5 @@
-"x"
-"poblacion_paro_50005"
+"cod","mun","Paro","date","Padron","Activos"
+50005,"Aguilón",2,2006,274,153
+50005,"Aguilón",2,2007,279,155
+50005,"Aguilón",1,2009,256,149
+50005,"Aguilón",2,2012,254,148

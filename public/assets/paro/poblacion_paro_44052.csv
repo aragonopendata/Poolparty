@@ -1,2 +1,6 @@
-"x"
-"poblacion_paro_44052"
+"cod","mun","Paro","date","Padron","Activos"
+44052,"Calomarde",1,2006,78,43
+44052,"Calomarde",1,2008,96,58
+44052,"Calomarde",3,2010,84,46
+44052,"Calomarde",3,2011,103,66
+44052,"Calomarde",6,2012,90,54
