@@ -2,9 +2,9 @@
 
 (function(){
 
-var margin = {top: 20, right: 20, bottom: 60, left: 50},
+var margin = {top: 10, right: 20, bottom: 60, left: 50},
     width = 500 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    height = 433 - margin.top - margin.bottom;
 
 var width2 = 100;
 
@@ -39,35 +39,62 @@ var svgBar2 = d3.select(".tourism")
                 .attr("margin.left", margin.left);
 
 // Creamos una etiqueta DIV que utilizaremos a modo de tooltip.
-var tooltip = svgBar2
-      .append('text')
-      .attr({
-        'x': 200,
-        'y': height + margin.top + 40
-      })
-      .attr({
-        'text-anchor': 'middle'
-      })
-      .style({
-        'font-size': '20px',
-        'font-weight': 'bold',
-        'fill': '#aaa'
-      })
-      .text('CHANGE ME');
+var tooltip = {
+  title: svgBar2
+          .append('text')
+          .attr({
+            'x': 200,
+            'y': height + margin.top
+          })
+          .attr({
+            'text-anchor': 'middle'
+          })
+          .style({
+            'font-size': '20px',
+            'font-weight': 'bold',
+            'fill': '#aaa'
+          }),
+  value: svgBar2
+          .append('text')
+          .attr({
+            'x': 200,
+            'y': height + margin.top + 24
+          })
+          .attr({
+            'text-anchor': 'middle'
+          })
+          .style({
+            'font-size': '24px',
+            'font-weight': 'bold',
+            'fill': '#aaa'
+          }),
+};
+
+function setTooltipTotal(tooltip, data){
+  var total = d3.sum(data, function(d){ return d.plazas; });
+  setTooltipValues(tooltip, "Número de plazas", total);
+}
+
+function setTooltipValues(tooltip, title, value){
+  tooltip.title.text(title);
+  tooltip.value.text(value);
+}
 
 d3.csv("/assets/turismo_jaca.csv", function (error, data) {
   data.forEach(function (d) {
     d.plazas = +d.plazas;
     d.establecimientos = +d.establecimientos;
-  });  
+  });
 
-	// Draw the elements
-	drawBars(data);
+  // Draw the elements
+  drawBars(data);
+
+  setTooltipTotal(tooltip, data);
 });
 
 // The function to draw the positive bars
 
-function drawBars (data) {
+function drawBars(data) {
 
   yScale.domain(data.map(function(d) { return d.tipo; }));
   xScale.domain([0, d3.max(data, function (d) {return +d.plazas;})]);
@@ -97,12 +124,12 @@ function drawBars (data) {
       d3.select(this)
         .style("stroke-width", 0.5)
         .style("stroke", "red");
-      tooltip.text( "Plazas en " + d.tipo.toLowerCase() + ": " + d.plazas);
+      setTooltipValues(tooltip, "Plazas en " + d.tipo.toLowerCase(), d.plazas);
     })
   .on("mouseout", function (d) {
     d3.select(this)
       .style("stroke-width", 0);
-    tooltip.text("CHANGE ME")
+    setTooltipTotal(tooltip, data);
   });
 
   var myBars = svgBar.selectAll("svgBar").data(data);
@@ -119,12 +146,12 @@ function drawBars (data) {
       d3.select(this)
         .style("stroke-width", 0.5)
         .style("stroke", "red");
-      tooltip.text( "Número de " + d.tipo.toLowerCase() + ": " + d.establecimientos);
+      setTooltipValues(tooltip, "Número de " + d.tipo.toLowerCase(), d.establecimientos);
     })
-  .on("mouseout", function (d) {
-    d3.select(this)
-      .style("stroke-width", 0);
-    tooltip.text("CHANGE ME")
+    .on("mouseout", function (d) {
+      d3.select(this)
+        .style("stroke-width", 0);
+    setTooltipTotal(tooltip, data);
   });
 };
 })();
