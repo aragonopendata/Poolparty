@@ -15,7 +15,7 @@ cities = ActiveCsv.new
 cities.open(csv_cities)
 
 get '/' do
-  erb :city
+  erb :index
 end
 
 get '/city/:id' do

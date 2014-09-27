@@ -1,18 +1,19 @@
 
 function showGoogleMaps(position) {
+  if(position){
+    var latLng = new google.maps.LatLng(position[0], position[1]);
 
-  var latLng = new google.maps.LatLng(position[0], position[1]);
+    var mapOptions = {
+      zoom: 12,
+      streetViewControl: false, // hide the yellow Street View pegman
+      scaleControl: true,       // allow users to zoom the Google Map
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      scrollwheel: false,
+      center: latLng
+    };
 
-  var mapOptions = {
-    zoom: 12,
-    streetViewControl: false, // hide the yellow Street View pegman
-    scaleControl: true,       // allow users to zoom the Google Map
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-    scrollwheel: false,
-    center: latLng
-  };
-
-  new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  }
 }
 
 function toggleDashboard(){
@@ -35,7 +36,6 @@ $(document).ready(function(){
   jQuery.get(url, function(data){
     position[0] = data.rows[0].st_y;
     position[1] = data.rows[0].st_x;
-    console.log(position);
     showGoogleMaps(position);
   });
 
