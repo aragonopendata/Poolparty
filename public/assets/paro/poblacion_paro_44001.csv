@@ -1,2 +1,6 @@
-"x"
-"poblacion_paro_44001"
+"cod","mun","Paro","date","Padron","Activos"
+44001,"Ababuj",2,2013,65,38
+44001,"Ababuj",2,2012,73,44
+44001,"Ababuj",1,2011,78,49
+44001,"Ababuj",1,2010,77,51
+44001,"Ababuj",2,2009,80,47

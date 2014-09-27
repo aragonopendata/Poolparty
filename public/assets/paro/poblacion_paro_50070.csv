@@ -1,2 +1,8 @@
-"x"
-"poblacion_paro_50070"
+"cod","mun","Paro","date","Padron","Activos"
+50070,"Calmarza",4,2013,80,46
+50070,"Calmarza",3,2012,77,44
+50070,"Calmarza",3,2011,105,64
+50070,"Calmarza",2,2010,77,42
+50070,"Calmarza",2,2009,75,41
+50070,"Calmarza",1,2008,76,42
+50070,"Calmarza",1,2007,79,43

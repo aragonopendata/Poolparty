@@ -1,2 +1,7 @@
-"x"
-"poblacion_paro_50902"
+"cod","mun","Paro","date","Padron","Activos"
+50902,"Marracos",5,2013,101,59
+50902,"Marracos",6,2012,106,65
+50902,"Marracos",4,2011,110,67
+50902,"Marracos",4,2010,100,60
+50902,"Marracos",4,2009,104,66
+50902,"Marracos",1,2005,112,1

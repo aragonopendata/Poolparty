@@ -1,2 +1,5 @@
-"x"
-"poblacion_paro_50007"
+"cod","mun","Paro","date","Padron","Activos"
+50007,"Aladrén",2,2013,54,30
+50007,"Aladrén",1,2007,65,38
+50007,"Aladrén",2,2006,62,39
+50007,"Aladrén",1,2005,64,0

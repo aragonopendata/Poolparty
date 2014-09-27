@@ -1,2 +1,6 @@
-"x"
-"poblacion_paro_50028"
+"cod","mun","Paro","date","Padron","Activos"
+50028,"Anento",1,2013,108,73
+50028,"Anento",1,2012,126,83
+50028,"Anento",3,2011,133,92
+50028,"Anento",1,2009,135,100
+50028,"Anento",2,2006,157,117
