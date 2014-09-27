@@ -22,6 +22,15 @@ body {
   opacity: 0.8;
 }
 
+header h1 {
+  font-family: 'Lobster', Georgia, Times, serif;
+  font-size: 70px;
+  line-height: 20px;
+  padding-bottom: 20px;
+  text-shadow: 2px 2px 2px #ccc;
+  text-align: center;
+}
+
 #header h1 {
   -webkit-margin-before: 0.6rem;
   -webkit-margin-after: 0.5rem;
@@ -50,6 +59,13 @@ body {
 #map-canvas {
   height: 400px;
   width: 100%;
+}
+
+.search {
+  max-width: 1024px;
+  margin: 0 auto;
+  margin-top: 20px;
+  min-height: 300px;
 }
 
 .dashboards h2 {
