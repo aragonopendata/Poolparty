@@ -21,6 +21,11 @@
   <div id="wrapper">
     <div class="pure-g search">
       <div class="pure-u-1">
+        <% if @error %>
+          <div style="color:red">
+            <p><%= @error %></p>
+          </div>
+        <% end %>
         <form class="pure-form pure-g" method="POST" action="/form">
             <div class="pure-u-1 pure-u-md-1-3">
               <input name="name" type="text" placeholder="Nombre de municipio. Ejemplo: Jaca" class="pure-input-1">
