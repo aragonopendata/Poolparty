@@ -1,21 +1,25 @@
 require 'csv'
 
 class ActiveCsv
-  def open(path)
-    @csv = {}
+  def initialize(path)
+    @data = {}
 
     CSV.read(path, headers: true, encoding: 'windows-1251:UTF-8').each do |row|
-      @csv[row['ine']] = {
-        name:    row['name'],
+      @data[normalize(row['name'])] = {
         ine:     row['ine'],
+        name:    row['name'],
         region:  row['comarca']
       }
     end
   end
 
   def find_by_name(name)
-    @csv.detect{|h| h[1][:name].downcase == name.downcase }[1]
-  rescue
-    nil
+    @data[normalize(name)]
+  end
+
+  private
+
+  def normalize(name)
+    name.downcase.strip
   end
 end

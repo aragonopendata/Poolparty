@@ -11,8 +11,7 @@ set :public_folder, settings.root + '/public'
 set :views, settings.root + '/templates'
 
 csv_cities = File.join(settings.root, 'public', 'assets', 'ine_cp.csv')
-cities = ActiveCsv.new
-cities.open(csv_cities)
+cities = ActiveCsv.new(csv_cities)
 
 get '/' do
   erb :index
@@ -22,8 +21,7 @@ post '/form' do
   if @city = cities.find_by_name(params[:name])
     redirect '/' + @city[:name]
   else
-    @error = "No se ha encontrado ningún municipio '#{params[:name]}' en la provincia de Aragón"
-    erb :index
+    error_page(params[:name])
   end
 end
 
@@ -31,7 +29,13 @@ get '/:name' do
   if @city = cities.find_by_name(params[:name])
     erb :city
   else
-    @error = "No se ha encontrado ningún municipio '#{params[:name]} en la provincia de Aragón'"
-    erb :index
+    error_page(params[:name])
   end
+end
+
+private
+
+def error_page(name)
+  @error = "No se ha encontrado ningún municipio '#{params[:name]}' en la provincia de Aragón"
+  erb :index
 end
