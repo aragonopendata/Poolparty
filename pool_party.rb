@@ -18,8 +18,8 @@ get '/' do
 end
 
 post '/form' do
-  if @city = cities.find_by_name(params[:name])
-    redirect '/' + @city[:name]
+  if city = cities.find_by_name(params[:name])
+    redirect '/' + city[:guid]
   else
     error_page(params[:name])
   end

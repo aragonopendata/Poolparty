@@ -1,13 +1,17 @@
 require 'csv'
+require 'active_support/core_ext/string'
 
 class ActiveCsv
   def initialize(path)
     @data = {}
 
-    CSV.read(path, headers: true, encoding: 'windows-1251:UTF-8').each do |row|
-      @data[normalize(row['name'])] = {
+    CSV.read(path, headers: true, encoding: 'UTF-8').each do |row|
+      guid = normalize(row['name'])
+
+      @data[guid] = {
         ine:     row['ine'],
         name:    row['name'],
+        guid:    guid,
         region:  row['comarca']
       }
     end
@@ -20,6 +24,6 @@ class ActiveCsv
   private
 
   def normalize(name)
-    name.downcase.strip
+    name.parameterize
   end
 end
