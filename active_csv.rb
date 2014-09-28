@@ -8,16 +8,9 @@ class ActiveCsv
       @csv[row['ine']] = {
         name:    row['name'],
         ine:     row['ine'],
-        region:  row['comarca'],
-        cp:      row['cp']
+        region:  row['comarca']
       }
     end
-  end
-
-  def find(ine)
-    @csv[ine]
-  rescue
-    nil
   end
 
   def find_by_name(name)
@@ -25,5 +18,4 @@ class ActiveCsv
   rescue
     nil
   end
-
 end
