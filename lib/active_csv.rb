@@ -1,6 +1,3 @@
-require 'csv'
-require 'active_support/core_ext/string'
-
 class ActiveCsv
   def initialize(path)
     @data = {}
