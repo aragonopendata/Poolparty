@@ -9,7 +9,7 @@ var censusLinesChart = {
       top: 20,
       right: 10,
       bottom: 30,
-      left: 45
+      left: 55
     };
 
     var width = 550 - margin.left - margin.right;

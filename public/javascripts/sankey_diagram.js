@@ -168,7 +168,7 @@ var votesSankey = {
           return d.name;
         })
         .filter(function(d) {
-          return d.dy > 150;
+          return d.dy > 250;
         })
         .attr('y', sankey.nodeWidth() / 2)
         .attr('transform', 'rotate(-90)')

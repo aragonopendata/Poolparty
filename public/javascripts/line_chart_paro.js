@@ -10,7 +10,7 @@ var unemploymentLinesChart = {
       top: 20,
       right: 15,
       bottom: 30,
-      left: 45
+      left: 55
     };
 
     var width = 550 - margin.left - margin.right;
