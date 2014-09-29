@@ -19,6 +19,10 @@ body {
   color: #fff;
 }
 
+.pure-menu.pure-menu-horizontal {
+  min-width: 1200px;
+}
+
 #header {
   position: absolute;
   margin-top: 2rem;
@@ -64,11 +68,13 @@ header h1 {
 #wrapper {
   margin: 0 auto;
   padding-top: 0;
+  min-width: 1200px;
 }
 
 #map-canvas {
   height: 400px;
   width: 100%;
+  min-width: 1200px;
 }
 
 .search {
@@ -137,6 +143,17 @@ header h1 {
   background: #fff;
 }
 
+.error {
+  visibility: hidden;
+}
+
+.error p {
+  font-size: 1rem;
+  color: #80B1D3;
+  padding-top: 120px;
+  text-align: center;
+  font-weight: 200; 
+}
 
 footer {
   background: black;

@@ -59,37 +59,49 @@ var activitiesBarChart = {
 
 
     d3.csv(this.csvFile, function(error, data) {
-      data.forEach(function(d) {
-        d.value = +d.value;
-      });
+      if (error) {
+        width = 0;
+        height = 0;
+        d3.select(".activities")
+          .remove();
+        d3.select(".error")
+          .style("visibility", "visible");  
+      } else {
+        d3.select(".error")
+          .remove();
+          
+        data.forEach(function(d) {
+          d.value = +d.value;
+        });
 
-      totalActividades = d3.sum(data, function(d) {
-        return d.value;
-      });
+        totalActividades = d3.sum(data, function(d) {
+          return d.value;
+        });
 
 
-      actividades_jaca = data;
+        actividades_jaca = data;
 
-      // Draw the elements
+        // Draw the elements
 
-      drawBars(actividades_jaca);
+        drawBars(actividades_jaca);
 
-      // Print total activities
-      tooltipTotal = svgBar
-        .append('text')
-        .attr({
-          'x': (width + margin.left + margin.right) / 2,
-          'y': height + margin.top + 34
-        })
-        .attr({
-          'text-anchor': 'middle'
-        })
-        .style({
-          'font-size': '24px',
-          'font-weight': 'bold',
-          'fill': '#aaa'
-        })
-        .text(totalActividades);
+        // Print total activities
+        tooltipTotal = svgBar
+          .append('text')
+          .attr({
+            'x': (width + margin.left + margin.right) / 2,
+            'y': height + margin.top + 34
+          })
+          .attr({
+            'text-anchor': 'middle'
+          })
+          .style({
+            'font-size': '24px',
+            'font-weight': 'bold',
+            'fill': '#aaa'
+          })
+          .text(totalActividades);
+      }
     });
 
 
@@ -98,9 +110,9 @@ var activitiesBarChart = {
     function drawBars() {
 
       xScale.domain(d3.range(actividades_jaca.length));
-      yScale.domain([d3.max(actividades_jaca, function(d) {
+      yScale.domain([0, d3.max(actividades_jaca, function(d) {
         return +d.value;
-      }), 0]);
+      })]);
 
       bar_color.domain(d3.range(function(d) {
         return d.act_descripcion;
@@ -114,11 +126,11 @@ var activitiesBarChart = {
           return xScale(i);
         })
         .attr('y', function(d) {
-          return height - d.value;
+          return height - yScale(d.value);
         })
         .attr('width', xScale.rangeBand())
         .attr('height', function(d) {
-          return d.value;
+          return yScale(d.value);
         })
         .attr('fill', function(d) {
           return bar_color(d.act_descripcion);

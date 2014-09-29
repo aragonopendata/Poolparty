@@ -92,8 +92,11 @@
             <div class="dashboard vseparator">
               <h3>Actividades económicas <a class="icon-info"><i class="fa fa-info-circle"></i></a></h3>
               <div class="activities"></div>
+              <div class="error">
+                <p>No hay datos disponibles para poblaciones menores de 10.000 habitantes.</p>  
+              </div>
               <div class="info">
-                <p>Instrumento de difusión de información estadística de las actividades económicas desarrolladas en la Comunidad Autónoma de Aragón, por municipios y tipos de actividad económica según CNAE-93.</p>
+                <p>Instrumento de difusión de información estadística de las actividades económicas desarrolladas en la Comunidad Autónoma de Aragón, por municipios y tipos de actividad económica según CNAE-93. Datos referridos al año 2008.</p>
                 <p>
                   <a href="/assets/actividades/actividades_<%= @city[:ine] %>.csv" target="_blank">Ver datos en CSV</a> ·
                   <a href="http://opendata.aragon.es/catalogo/catalogo.html?q=actividades+econ%25C3%25B3micas" target="_blank">Ver datos en Aragón Open Data</a>
