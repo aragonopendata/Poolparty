@@ -3,7 +3,7 @@ class VisualAragopedia < Sinatra::Application
   set :public_folder, settings.root + '/public'
   set :views, settings.root + '/templates'
 
-  csv_cities = File.join(settings.root, 'public', 'assets', 'ine_cp.csv')
+  csv_cities = File.join(settings.root, 'public', 'assets', 'mun_geocoded.csv')
   cities = ActiveCsv.new(csv_cities)
 
   get '/' do

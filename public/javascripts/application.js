@@ -32,14 +32,7 @@ $(document).ready(function(){
   $('.icon-info').on('click', toggleDashboard);
 
   if($('#map-canvas').length > 0){
-    var location = $('#map-canvas').data('location');
-    var position = [];
-
-    var url = "http://jacathon-huracan.cartodb.com/api/v2/sql?q=SELECT%20ST_X(ST_Centroid(the_geom::geometry)),ST_Y(ST_Centroid(the_geom::geometry))%20FROM%20esp_adm4%20WHERE%20name_4=%27" + location + "%27"
-    jQuery.get(url, function(data){
-      position[0] = data.rows[0].st_y;
-      position[1] = data.rows[0].st_x;
-      showGoogleMaps(position);
-    });
+    var position = [$('#map-canvas').data('lon'), $('#map-canvas').data('lat')];
+    showGoogleMaps(position);
   }
 });

@@ -6,10 +6,13 @@ class ActiveCsv
       guid = normalize(row['name'])
 
       @data[guid] = {
-        ine:     row['ine'],
-        name:    row['name'],
-        guid:    guid,
-        region:  row['comarca']
+        ine:    row['ine'],
+        name:   row['name'],
+        guid:   guid,
+        region: row['comarca'],
+        lon:    row['lon'],
+        lat:    row['lat'],
+        cp:     row['cp']
       }
     end
   end
