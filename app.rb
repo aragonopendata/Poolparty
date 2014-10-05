@@ -18,6 +18,15 @@ class VisualAragopedia < Sinatra::Application
     end
   end
 
+  get '/cities' do
+    content_type :json
+
+    {
+      query: params[:query],
+      suggestions: cities.find_by_prefix(params[:query])
+    }.to_json
+  end
+
   get '/:name' do
     if @city = cities.find_by_name(params[:name])
       erb :city

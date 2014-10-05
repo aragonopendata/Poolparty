@@ -31,6 +31,11 @@ $(document).ready(function(){
 
   $('.icon-info').on('click', toggleDashboard);
 
+  if($('form').length > 0){
+    var a, options = { serviceUrl:'/cities' };
+    a = $('#query').autocomplete(options);
+  }
+
   if($('#map-canvas').length > 0){
     var position = [$('#map-canvas').data('lon'), $('#map-canvas').data('lat')];
     showGoogleMaps(position);

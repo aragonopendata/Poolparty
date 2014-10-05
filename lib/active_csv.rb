@@ -21,6 +21,12 @@ class ActiveCsv
     @data[normalize(name)]
   end
 
+  def find_by_prefix(prefix)
+    @data.invert.keys.select{|h| h[:name].downcase.include?(prefix.downcase) }.map do |h|
+      {value: h[:name]}
+    end
+  end
+
   private
 
   def normalize(name)
