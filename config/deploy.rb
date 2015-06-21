@@ -3,7 +3,7 @@ require 'mina/rails'
 require 'mina/git'
 require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
 
-set :domain,     'blato01'
+set :domain,     'blato03'
 set :deploy_to,  '/var/www/visual-aragopedia.visualizados.com'
 set :repository, 'git@github.com:aragonopendata/Poolparty.git'
 set :branch,     'master'
@@ -14,7 +14,8 @@ set :shared_paths, ['tmp']
 
 # Optional settings:
 set :user, 'ubuntu'
-set :port, 2222
+set :port, 22
+set :forward_agent, true¬
 
 # This task is the environment that is loaded for most commands, such as
 # `mina deploy` or `mina rake`.
